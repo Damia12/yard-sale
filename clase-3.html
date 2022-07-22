@@ -30,6 +30,9 @@
       a {
         font-size: var(--sm);
         color: var(--hospital-green);
+        text-decoration: none;
+        text-align: center;
+        margin-bottom: 52px;
       }
       .login {
         width: 100%;
@@ -41,7 +44,6 @@
         display: grid;
         grid-template-rows: auto 1fr auto;
         width: 300px;
-        justify-items: center;
       }
       .logo {
         display: none;
@@ -65,7 +67,7 @@
       .form {
         display: flex;
         flex-direction: column;
-        margin-bottom: 12px;
+        /* margin-bottom: 12px; */
       }
       .label {
         font-size: var(--sm);
@@ -91,6 +93,17 @@
         font-weight: bold;
         height: 50px;
       }
+      .secondary-button {
+        border-radius: 8px;
+        border: 1px solid var(--hospital-green);
+        background-color: var(--white);
+        color: var(--hospital-green);
+        width: 100%;
+        cursor: pointer;
+        font-size: var(--md);
+        font-weight: bold;
+        height: 50px;
+      }
       .login-button {
         margin-top: 14px;
         margin-bottom: 30px;
@@ -109,6 +122,10 @@
       .email img {
         width: 80px;
       }
+
+      .input-email {
+        margin-bottom: 22px;
+      }
       .resend {
         color: var(--very-light-pink);
         font-size: var(--sm);
@@ -121,6 +138,12 @@
         .logo {
           display: block;
         }
+
+        .secondary-button {
+          position: absolute;
+          bottom: 24px;
+          width: 300px;
+        }
       }
     </style>
   </head>
@@ -128,18 +151,29 @@
     <div class="login">
       <div class="form-container">
         <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo" />
-        <h1 class="title">Email has been sent!</h1>
-        <p class="subtitle">
-          Please check your inbox for instructions on how to reset the password.
-        </p>
-        <div class="email">
-          <img src="./icons/email.svg" alt="email image" class="email-img" />
-        </div>
-        <button class="primary-button login-button">Login</button>
-        <p class="resend">
-          <span> Didn't receive the email? </span>
-          <a href="/">Resend</a>
-        </p>
+        <form action="/" class="form">
+          <label for="email" class="label">Email address</label>
+          <input
+            type="text"
+            id="email"
+            placeholder="email"
+            class="input input-email"
+          />
+          <label for="password" class="label">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="*********"
+            class="input input-password"
+          />
+          <input
+            type="submit"
+            value="Log in"
+            class="primary-button login-button"
+          />
+          <a href="/">Forgot your password</a>
+        </form>
+        <button class="secondary-button signup-button">Sign Up</button>
       </div>
     </div>
   </body>
